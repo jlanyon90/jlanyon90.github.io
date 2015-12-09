@@ -1,78 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
-  <head>
-    <meta charset = "utf-8">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title> Camera and RGB Capture </title>
-    	<link rel="stylesheet" type="text/css" href="cameraStyles.css">
-      <!-- <script src="camera.js"> </script> -->
 
-  </head>
+  <meta name="description" content="Assignment 2 CS 3500">
+  <meta name="author" content="Justin... Luke...">
 
-  <body>
-    <header class = "banner">
-      <h1> <center> RGB Camer Evaluator </center></h1>
-    </header>
+  <link rel="stylesheet" href="bootstrap-3.3.6-dist\css\bootstrap.css">
+  <link rel="stylesheet" href="main.css">
+  <title>CS3550 Assignment 3</title>
+</head>
 
-    <main>
-      <section>
-        <h2> <center> Camera </center></h2>
-				<article>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
 
-          <div class="left" id="container">
-              <video autoplay="true" id="videoElement"> </video>
-              <canvas style="display:none;"></canvas>
+
+
+        <!-- OUTPUT FROM CAMERA Section -->
+        <section class="success" id="page-top">
+          <div class="jumbotron">
+            <h2>Welcome to the Color Finder!</h2>
+            </br>
+            <p>In this app you will be able to find the average color within your image. It will be displayed in both Hexadecimal and its corresponding RGB value. ENJOY!
+            </p>
           </div>
+        </section>
 
-          <div class="right" id="container">
-            <img src="" id="img">
+        <section class="success" id="camera section">
+          <div class="container">
+
           </div>
+        </section>
+        <section class="success" id="output">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12 text-left">
+                <h2> HERE GOES THE CAMERA</h2>
+                <div class = "container">
+                  <video id = "video" width = "400" height = "300" autoplay= "true"></video>
+                  <canvas id = "canvas" width = "400" height = "300"></canvas>
+                  <script src="webcam1.js"></script>
+                </div>
+              </div>
 
-				</article>
-      </section>
+              <div class="col-lg-12 text-right">
+                <h2>Output - Values</h2>
 
-      <!-- <section>
-        <h2> <center> Snapshot </center></h2>
-          <article>
-
-            <div id="container">
-              <img src="" id="img">
+              </div>
             </div>
-        </article>
-      </section> -->
+            <div class="row">
+              <div class="col-lg-4 col-lg-offset-2 pull-right">
+                <div class="input-group">
+                  <span class="input-group-addon" id="basic-addon1">R</span>
+                  <input type="text" class="form-control" placeholder="R-Value" aria-describedby="basic-addon1" size="3">
+                </div>
+                <!--end input group -->
+                </br>
+                <div class="input-group">
+                  <span class="input-group-addon" id="basic-addon1">G</span>
+                  <input type="text" class="form-control" placeholder="G-Value" aria-describedby="basic-addon1" size="3">
+                </div>
+                <!--end input group -->
+                </br>
+                <div class="input-group">
+                  <span class="input-group-addon" id="basic-addon1">B</span>
+                  <input type="text" class="form-control" placeholder="B-Value" aria-describedby="basic-addon1" size="3">
+                </div>
+                <!--end input group -->
+                </br>
 
-      <script src="camera.js"> </script>
-    </main>
+              <!--end input group -->
+              </br>
+              <input type="button" id="turnOn" value="Turn On Camera" onclick="turnOn();">
+              <input type="button" name="save" value="Save" onclick="createSave();" >
+              <input type="button" name="load" value="Load Save" onclick="callSave()">
+              <input type="button" name="clear" value="Clear Saves" onclick="clearSave();">
+              </div>
+            </div>
+          </div>
+          <!--end container-->
+        </section>
+</body>
 
-    <aside>
-      <p> Take a snapshot using your webcam and the average
-        RGB values for the shot will be given. The RGB values are then able to be saved and
-        recalled. <br> <br>
-        <input type="button" id="turnOn" value="Turn On Camera" onclick="turnOn();">
-        <br>
-        <br>
-        <input type="text" name="save" id="txt_save" size="20" maxlength="20" value="Input Snapshot Name">
-        <input type="button" id="snapshot" value="Take a Snapshot" onclick="snapshot();" >
-        <br>
-        <br>
-        <table id="pixel_table" border="1">
-          <caption style="font-size:25px;font-weight:bold;"> RGB Values</caption>
-          <tr id="header">
-            <th>Name</th><th>Red</th><th>Green</th><th>Blue</th>
-          </tr>
-          <tr>
-
-          </tr>
-        </table>
-
-        <input type="button" name="save" value="Save" onclick="createSave();" >
-        <input type="button" name="load" value="Load Save" onclick="callSave()">
-        <input type="button" name="clear" value="Clear Saves" onclick="clearSave();">
-    </aside>
-
-    <footer>
-      <p>Designed by: Andrew Mathews and Brandon Seager</p>
-    </footer>
-  </body>
 </html>
