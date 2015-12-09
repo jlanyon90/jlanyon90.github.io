@@ -42,11 +42,14 @@
             <div class="row">
               <div class="col-lg-12 text-left">
                 <h2> HERE GOES THE CAMERA</h2>
-                <div class = "container">
-                  <video id = "video" width = "400" height = "300" autoplay= "true"></video>
-                  <canvas id = "canvas" width = "400" height = "300"></canvas>
-                  <script src="webcam1.js"></script>
-                </div>
+                <div class="left" id="container">
+              <video autoplay="true" id="videoElement"> </video>
+              <canvas style="display:none;"></canvas>
+          </div>
+
+          <div class="right" id="container">
+            <img src="" id="img">
+          </div>
               </div>
 
               <div class="col-lg-12 text-right">
