@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset = "utf-8">
+
+    <title> Camera and RGB Capture </title>
+    	<link rel="stylesheet" type="text/css" href="cameraStyles.css">
+      <!-- <script src="camera.js"> </script> -->
+
+  </head>
+
+  <body>
+    <header class = "banner">
+      <h1> <center> RGB Camer Evaluator </center></h1>
+    </header>
+
+    <main>
+      <section>
+        <h2> <center> Camera </center></h2>
+				<article>
+
+          <div class="left" id="container">
+              <video autoplay="true" id="videoElement"> </video>
+              <canvas style="display:none;"></canvas>
+          </div>
+
+          <div class="right" id="container">
+            <img src="" id="img">
+          </div>
+
+				</article>
+      </section>
+
+      <!-- <section>
+        <h2> <center> Snapshot </center></h2>
+          <article>
+
+            <div id="container">
+              <img src="" id="img">
+            </div>
+        </article>
+      </section> -->
+
+      <script src="camera.js"> </script>
+    </main>
+
+    <aside>
+      <p> Take a snapshot using your webcam and the average
+        RGB values for the shot will be given. The RGB values are then able to be saved and
+        recalled. <br> <br>
+        <input type="button" id="turnOn" value="Turn On Camera" onclick="turnOn();">
+        <br>
+        <br>
+        <input type="text" name="save" id="txt_save" size="20" maxlength="20" value="Input Snapshot Name">
+        <input type="button" id="snapshot" value="Take a Snapshot" onclick="snapshot();" >
+        <br>
+        <br>
+        <table id="pixel_table" border="1">
+          <caption style="font-size:25px;font-weight:bold;"> RGB Values</caption>
+          <tr id="header">
+            <th>Name</th><th>Red</th><th>Green</th><th>Blue</th>
+          </tr>
+          <tr>
+
+          </tr>
+        </table>
+
+        <input type="button" name="save" value="Save" onclick="createSave();" >
+        <input type="button" name="load" value="Load Save" onclick="callSave()">
+        <input type="button" name="clear" value="Clear Saves" onclick="clearSave();">
+    </aside>
+
+    <footer>
+      <p>Designed by: Andrew Mathews and Brandon Seager</p>
+    </footer>
+  </body>
+</html>
